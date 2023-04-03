@@ -1,0 +1,38 @@
+.nav-bar{
+    background-color: #f1f0f0;
+    padding: 1rem 3rem ;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;   
+}
+ul{
+    list-style: none;
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: #545454;
+}
+a:hover{
+    color: darkgoldenrod;
+}
+li{
+    padding: .3rem 1rem 0rem;
+}
+.cart-number{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.cart-number h4{
+    position: relative;
+    bottom: .5rem;
+    font-size: small;
+    color: black;
+    font-weight: 1000;
+    background-color: darkgoldenrod;
+    padding: .07rem .3rem .1rem;
+    border-radius: 50%;      
+}
+
