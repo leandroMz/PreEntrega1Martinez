@@ -1,7 +1,6 @@
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget';
 import { FaUser } from 'react-icons/fa';
-import logo from '../../assets/img/brand.png';
 import { Link, NavLink, useParams } from 'react-router-dom';
 import '../../Css/NavBar.css'
 import { NavDropdown } from 'react-bootstrap';
@@ -13,7 +12,7 @@ const NavBar = () => {
     return (
         <div className='nav-bar'>
             <Link to='/'>
-                <img src={logo} style={{ width: "150px" }} alt="" />
+                <img src="/public/brand.png" style={{ width: "150px" }} alt="" />
             </Link>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
@@ -24,10 +23,16 @@ const NavBar = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li>
+                                <ul>
                                 <NavDropdown title="Anteojos" id="basic-nav-dropdown">
+                                    <li>
                                     <NavLink to="/category/Clasico">Clasicos</NavLink>
+                                    </li>
+                                    <li>
                                     <NavLink to="/category/Diseño">Diseño</NavLink>
+                                    </li>                                        
                                 </NavDropdown>
+                                </ul>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/category/Accesorios">Accesorios</NavLink>
