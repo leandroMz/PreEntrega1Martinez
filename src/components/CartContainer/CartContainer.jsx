@@ -18,7 +18,7 @@ export const CartContainer = () => {
   return (
     <div className='orderItems'>
 
-      <h2>Carrito ( {totalQuantity() } )  </h2>
+      <h2>Carrito ( {totalQuantity()} )  </h2>
       {console.log()}
       {(cartList.length === 0) ?
         <div>
@@ -31,26 +31,26 @@ export const CartContainer = () => {
         <div>
           {cartList.map(product => (
 
-            
+
             <div className="card">
               <img className="card-img-top" src={product.picture} alt="" />
-<div className="card-body">
-              <h5>Producto: {product.name}</h5>
-              <p className="card-text">Detalle: {product.detail}</p>
-              <p className="card-text">cantidad: {product.quantity} </p>
-              <label className="card-text">precio: ${product.price} </label>
-              <h4 className="card-text">Subtotal: ${(parseInt(product.price) * parseInt(product.quantity))} </h4>
-              <button className="card-footer" onClick={() => quitarProducto(product.id)}>Eliminar del Carrito</button>
-</div>
-           
+              <div className="card-body">
+                <h5>Producto: {product.name}</h5>
+                <p className="card-text">Detalle: {product.detail}</p>
+                <p className="card-text">cantidad: {product.quantity} </p>
+                <label className="card-text">precio: ${product.price} </label>
+                <h4 className="card-text">Subtotal: ${(parseInt(product.price) * parseInt(product.quantity))} </h4>
+                <button className="card-footer" onClick={() => quitarProducto(product.id)}>Eliminar del Carrito</button>
+              </div>
+
             </div>
           ))}
           <div className="card">
-          <h2 className="card-text">Total: ${totalPrice()} </h2>
-          <div className="card-footer">
-          <button onClick={vaciarCart} className="btn btn-outline-danger">Vaciar Carrito</button>
-          <Link to={'/'} className="btn btn-outline-success">Seguir la compra</Link>
-          </div>
+            <h2 className="card-text">Total: ${totalPrice()} </h2>
+            <div className="card-footer">
+              <button onClick={vaciarCart} className="btn btn-outline-danger">Vaciar Carrito</button>
+              <Link to={'/'} className="btn btn-outline-success">Seguir la compra</Link>
+            </div>
           </div>
         </div>
       }

@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <div className='nav-bar'>
             <Link to='/'>
-                <img src="./brand.png" style={{ width: "150px" }} alt="" />
+                <img src="/brand.png" style={{ width: "150px" }} alt="" />
             </Link>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">

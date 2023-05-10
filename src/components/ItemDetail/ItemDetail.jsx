@@ -31,7 +31,8 @@ export const ItemDetail = ({ product }) => {
       ) :
         <div className="col">
           <div className="row">
-            <img src={product.picture} className="w-50" alt={product.name} />
+            <img src={product.picture} className="w-50" alt="..."/>
+            {console.log(product.picture)}
             <h3>Nombre: {product.name}</h3>
             <h3>Categoría: {product.category}</h3>
             <h3>Precio: {product.price}</h3>
