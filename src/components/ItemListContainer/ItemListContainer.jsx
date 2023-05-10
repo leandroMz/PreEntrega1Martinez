@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../Css/ItemList.css'
 import { useParams } from 'react-router-dom';
 import { ItemList } from '../ItemList/ItemList';
-import { collection, doc, getDoc, getFirestore, query } from "firebase/firestore"
+// import { collection, doc, getDoc, getFirestore, query } from "firebase/firestore"
 
 const Loading = () => {
   return (
@@ -19,7 +19,7 @@ const Loading = () => {
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([])
-  const [producto, setProducto] = useState({})
+  // const [producto, setProducto] = useState({})
   const [loading, setLoading] = useState(true)
   const { cid } = useParams()
 
