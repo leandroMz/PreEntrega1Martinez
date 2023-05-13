@@ -1,28 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { mFetch } from '../../util/mFetch'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../Css/ItemList.css'
 import { useParams } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './ItemListContainer.css'
 import { ItemList } from '../ItemList/ItemList';
+import { LoadingComponent } from '../Loading/LoadingComponent';
 // import { collection, doc, getDoc, getFirestore, query } from "firebase/firestore"
 
-const Loading = () => {
-  return (
-    <div>
-      <h4>Cargando...</h4>
-      <div className="spinner-border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
-    </div>
-  )
-}
-
-const ItemListContainer = ({ greeting }) => {
+export const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([])
   // const [producto, setProducto] = useState({})
   const [loading, setLoading] = useState(true)
   const { cid } = useParams()
-
   useEffect(() => {
     if (!cid) {
       mFetch()
@@ -40,21 +29,13 @@ const ItemListContainer = ({ greeting }) => {
         .finally(() => setLoading(false))
     }
   }, [cid])
-
-
-
-
   return (
-
     <div>
       {loading ?
-        <Loading /> :
+        <LoadingComponent/>
+        :
         <ItemList products={products} />
       }
-
     </div>
-
   )
 }
-
-export default ItemListContainer

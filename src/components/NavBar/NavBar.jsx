@@ -1,14 +1,10 @@
-import React from 'react'
-import CartWidget from '../CartWidget/CartWidget';
 import { FaUser } from 'react-icons/fa';
-import { Link, NavLink, useParams } from 'react-router-dom';
-import '../../Css/NavBar.css'
+import { Link, NavLink} from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
+import { CartWidget } from '../CartWidget/CartWidget';
+import './NavBar.css'
 
-
-const NavBar = () => {
-
-
+export const NavBar = () => {
     return (
         <div className='nav-bar'>
             <Link to='/'>
@@ -16,7 +12,6 @@ const NavBar = () => {
             </Link>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -30,6 +25,9 @@ const NavBar = () => {
                                     </li>
                                     <li>
                                     <NavLink to="/category/Diseño">Diseño</NavLink>
+                                    </li>
+                                    <li>
+                                    <NavLink to="#">Luz Azul</NavLink>
                                     </li>                                        
                                 </NavDropdown>
                                 </ul>
@@ -39,10 +37,7 @@ const NavBar = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Ofertas</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Contacto</a>
-                            </li>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
@@ -50,23 +45,17 @@ const NavBar = () => {
             <div>
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="#">
                             <FaUser />
                         </a>
                     </li>
                     <li>
-
                         <a href="">
                             <CartWidget />
                         </a>
                     </li>
-
                 </ul>
-
             </div>
-
         </div>
     )
 }
-
-export default NavBar

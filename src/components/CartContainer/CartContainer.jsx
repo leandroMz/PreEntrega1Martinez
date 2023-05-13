@@ -1,56 +1,77 @@
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../Context/CartContext"
+import "./CartContainer.css"
+import { FaTrashAlt } from "react-icons/fa"
+import { CgMathMinus, CgMathPlus } from 'react-icons/cg';
+import Swal from 'sweetalert2';
 
-export const CartContainer = () => {
+export const CartContainer = ({ product }) => {
   const { cartList, vaciarCart, quitarProducto, totalQuantity, totalPrice } = useCartContext()
-
-  if (!cartList) {
-    return <div>
-      <h2>
-        El carrito esta vacio!
-      </h2>
-      <p>por favor agregue productos al carrito para proceder</p>
-      <br />
-      <h5>Haga click en Comprar para regresar a los productos e iniciar su compra</h5>
-      <Link to={'/'} className="btn btn-outline-success">Comprar</Link>
-    </div>
-  }
+  const alertDeleteCart = () => {
+    Swal.fire({
+      title: '¿Está seguro de vaciar el carrito?',
+      text: 'Esta acción eliminará todos los productos del carrito.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, vaciar carrito',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        vaciarCart();
+        Swal.fire(
+          'Carrito vaciado',
+          'El carrito ha sido vaciado correctamente.',
+          'success'
+        );
+      }
+    });
+  };
   return (
-    <div className='orderItems'>
-
-      <h2>Carrito ( {totalQuantity()} )  </h2>
-      {console.log()}
+    <div className='orderItems cartContein'>
+      <div className="OrderTitleCart">
+        <h3>Carrito ( {totalQuantity()} )  </h3>
+      </div>
       {(cartList.length === 0) ?
-        <div>
-          <h2>El carrito se encuentra vacio!</h2>
-          <p>por favor agregue productos al carrito para proceder</p>
-          <h5>Haga click en el Boton para regresar a los productos e iniciar su compra</h5>
-          <Link to={{ pathname: '/', hash: 'productos' }} className="btn btn-success">ir a Comprar</Link>
+        <div className="cartInfo">
+          <hr />
+          <h4>El carrito se encuentra vacio!</h4>
+          <p>Por favor agregue productos al carrito para proceder</p>
+          <div className="btn-order-cart">
+            <Link to={{ pathname: '/', hash: 'productos' }} className="btn btn-cartCero">ir a Comprar</Link>
+          </div>
         </div>
         :
         <div>
+          <hr />
           {cartList.map(product => (
-
-
-            <div className="card">
-              <img className="card-img-top" src={product.picture} alt="" />
-              <div className="card-body">
-                <h5>Producto: {product.name}</h5>
-                <p className="card-text">Detalle: {product.detail}</p>
-                <p className="card-text">cantidad: {product.quantity} </p>
-                <label className="card-text">precio: ${product.price} </label>
-                <h4 className="card-text">Subtotal: ${(parseInt(product.price) * parseInt(product.quantity))} </h4>
-                <button className="card-footer" onClick={() => quitarProducto(product.id)}>Eliminar del Carrito</button>
+            <div className="contein-product-cart">
+              <img className="product-cart-img" src={product.image} alt="" />
+              <div className="product-cart">
+                <div className="product-detail">
+                  <h5>{product.name}</h5>
+                  <button className="productDelete" onClick={() => quitarProducto(product.id)}>Eliminar del Carrito</button>
+                </div>
+                <div className="countCart">
+                  <button className="btnCountCart"><CgMathMinus /></button>
+                  <h7 className="productQuantity">{product.quantity} </h7>
+                  <button className="btnCountCart"><CgMathPlus /></button>
+                </div>
+                <h5 className="productPrice">${(parseInt(product.price) * parseInt(product.quantity))} </h5>
               </div>
-
+              <hr />
             </div>
           ))}
-          <div className="card">
-            <h2 className="card-text">Total: ${totalPrice()} </h2>
-            <div className="card-footer">
-              <button onClick={vaciarCart} className="btn btn-outline-danger">Vaciar Carrito</button>
-              <Link to={'/'} className="btn btn-outline-success">Seguir la compra</Link>
-            </div>
+          <div className="contein-total-car">
+            <button onClick={alertDeleteCart} className="cartDelete">
+              <FaTrashAlt />
+            </button>
+            <h3 className="card-text">Total ${totalPrice()} </h3>
+          </div>
+          <div className="ConteinCartContinue">
+            <Link to={'/'} className="btn-cartCero-Back">Agregar más Productos</Link>
+            <Link to={'/'} className="btn-cartCero">Continuar Compra</Link>
           </div>
         </div>
       }

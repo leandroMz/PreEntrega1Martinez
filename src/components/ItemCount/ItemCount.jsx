@@ -1,18 +1,18 @@
 import { useCounter } from "../hook/UseCounter"
-
-export const ItemCount = ( {stock, initial, onAdd} ) => {
-    const {quantity,increment,decrement} = useCounter(initial, stock)
+import { CgMathMinus, CgMathPlus } from 'react-icons/cg';
+import './ItemCount.css'
+export const ItemCount = ({ stock, initial, onAdd }) => {
+  const { quantity, increment, decrement } = useCounter(initial, stock)
   return (
+    <div className="orderCountAdd">
       <div>
-        <div>
-        <button onClick={decrement}>-</button>
-        <label>{quantity}</label>
-        <button onClick={increment}>+</button>
-        </div>
-        <div>
-            <button onClick={ ()=>onAdd(quantity) } disabled={!stock}>Agregar</button>
-        </div>
-        
+        <button className="btnCountCart" onClick={decrement}><CgMathMinus/></button>
+        <label className="productQuantity">{quantity}</label>
+        <button className="btnCountCart" onClick={increment}><CgMathPlus/></button>
+      </div>
+      <div className="addToCart">
+        <button onClick={() => onAdd(quantity)} disabled={!stock}>Comprar</button>
+      </div>
     </div>
   )
 }

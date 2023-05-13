@@ -1,0 +1,17 @@
+.orderCardInfo {
+    margin: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.orderCardInfo img {
+    width: 8vw;
+    padding: 0 1.5rem;
+}
+
+.orderCardInfoLi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

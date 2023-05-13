@@ -1,0 +1,11 @@
+.orderItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.orderAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

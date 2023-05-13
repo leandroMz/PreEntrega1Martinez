@@ -1,0 +1,37 @@
+.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 15%;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgb(217, 218, 213);
+    background-color: rgb(255, 255, 255);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.7s ease;
+}
+.card-title {
+    font-size: .8em;
+}
+.card-text{
+    color: black;
+}
+
+
+/* loadingggg */
+.spinner-border{
+    color: rgb(179, 171, 14);
+}
+.loading-image{
+    height: 9.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

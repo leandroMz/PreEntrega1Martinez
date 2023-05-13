@@ -1,0 +1,10 @@
+.orderItemDetail{
+    margin: 4rem 4rem 0;
+    padding: 4rem;
+    background-color: rgb(247, 247, 247);    
+    border-radius: 1rem;
+    box-shadow: -2px 7px 15px -3px rgba(170, 167, 167, 0.75);
+}
+.loadDetail h2{
+    font-size: 3em;
+}

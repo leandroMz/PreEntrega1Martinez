@@ -1,15 +1,9 @@
 import { createContext, useContext, useState } from "react"
-// crear un contexto inicializado con []
-// exportar app
-
 
 const CartContext = createContext([])
-
 export const useCartContext = () => useContext(CartContext)
-
 export const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([])
-
     const addToCart = (newProduct) => {
         const productIndex = cartList.findIndex(product => product.id === newProduct.id)
         if (productIndex !== -1) {
@@ -23,7 +17,6 @@ export const CartContextProvider = ({ children }) => {
             ])
         }
     }
-
     const totalQuantity = () => {
         const quantity = cartList.reduce((acc, product) => acc + product.quantity, 0);
         return quantity
@@ -39,7 +32,6 @@ export const CartContextProvider = ({ children }) => {
     const vaciarCart = () => {
         setCartList([])
     }
-
     return (
         <CartContext.Provider value={{
             cartList,

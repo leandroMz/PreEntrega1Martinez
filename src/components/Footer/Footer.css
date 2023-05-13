@@ -1,0 +1,111 @@
+footer{
+    padding-top: .5rem;
+    margin: 12rem 0 0 0;
+    background-color: darkslategray;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items:stretch
+}
+h4{
+    text-align: center;
+    color: darkgray;
+    font-size: 2em;
+    font-weight: bold;
+}
+iframe{
+    
+    border-radius: 1.5rem;
+    box-shadow: 4px 8px 10px rgb(11, 11, 11);
+}
+.social-links{
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.social-image{
+    font-size: 5rem;
+    color: goldenrod;
+}
+.social-image:hover{
+    color: rgb(177, 135, 27);
+}
+
+.ubication-box{
+    padding-top: 2rem;
+}
+.contact{
+    padding: 1rem;
+}
+.form-contact h4{
+    padding-bottom: 2rem;
+}
+
+form {
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+
+}
+
+div.formulario h5 {
+    font-family: var(--fontTitulos);
+    font-weight: 500;
+    font-size: 1.7em;
+    color: var(--TitulosLightSoft);
+    text-align: end;
+}
+
+.form-start {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    background-color: rgb(222, 190, 110);
+    border: 0;
+    padding: .4rem 1rem;
+    border-radius: 2rem;
+    box-shadow: -2px 7px 15px -3px rgba(0, 0, 0, 0.75);
+    margin-right: .5rem;
+}
+button{
+    background-color: goldenrod;
+    box-shadow: -2px 7px 15px -3px rgba(0, 0, 0, 0.75);
+    padding: .4rem 1rem;
+    border-radius: 1.5rem;
+    border: 0;
+    font-weight: bold;
+    color: rgb(77, 80, 83);
+}
+button:hover{
+    background-color: rgb(175, 134, 30);
+}
+#parent{
+    display: flex;
+    padding: 1rem;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.errores-push {
+    font-family: var(--fontPrincipal);
+    font-size: .9em;
+    background-color: var(--TitulosDark);
+    color: var(--TitulosLight);
+    border-radius: 1rem;
+    padding: .2rem 1rem;
+    border: 2px solid;
+}
+
+.danger {
+    border: 2px solid red;
+}
+
+.pass {
+    border: 2px solid green;
+
+}
