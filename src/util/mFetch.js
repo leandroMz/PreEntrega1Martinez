@@ -1,4 +1,4 @@
-let productos = [
+let products = [
   {id:'1', category:'Clasico', name:'Classic One', price: 37900, stock:20, image: "/c1.jpg", detail:"Los anteojos clásicos de la marca Tom Ford tienen un marco de acetato marrón con detalles de metal y lentes degradadas."},
   {id:'2', category:'Clasico', name:'Classic Two', price: 47900, stock:0, image: "/c2.jpg", detail: "Los anteojos Ray-Ban Aviator tienen un marco de metal dorado y lentes de cristal verde G-15."},
   {id:'3', category:'Clasico', name:'Classic Three', price: 47900, stock:10, image: "/c3.jpg", detail:"Los anteojos clásicos de la marca Oakley tienen un marco de plástico negro y lentes de policarbonato resistente a los impactos."},
@@ -18,7 +18,7 @@ let productos = [
   export const mFetch = () =>{
     return new Promise((resolve, reject) => {
     setTimeout( ()=>{
-      resolve(productos)
+      resolve(products)
     },2000 )
   })
   }

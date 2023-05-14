@@ -7,7 +7,7 @@ import './ItemDetail.css'
 
 export const ItemDetail = ({ product }) => {
   const [isCant, setIsCant] = useState(false)
-  const { addToCart, carList } = useCartContext()
+  const { addToCart } = useCartContext()
   const onAdd = (quantity) => {
     addToCart({ ...product, quantity })
     setIsCant(true)
@@ -26,7 +26,7 @@ export const ItemDetail = ({ product }) => {
         <div>
           <div className="orderTitleDetail">
             <div className='orderImagesDetail'>
-              <img src={product.image} className="w-100" alt="..." />
+              <img src={product.picture} className="w-100" alt="..." />
               <div className='secondaryImages'>
                 <div className='imageSecondBox'>
                   <div className="spinner-border" role="status">

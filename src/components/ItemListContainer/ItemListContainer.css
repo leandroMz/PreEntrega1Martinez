@@ -2,3 +2,29 @@ h3 {
     text-align: center;
     color: rgb(128, 126, 126);
 }
+.imageBanner{
+    margin-top: 1rem;
+    width: 100%;
+    box-shadow: 2px 2px 6px rgb(131, 127, 127);
+}
+.titleCategorysProduct{
+    margin: 1rem 0 2rem;
+    padding: 2rem;
+    background-color: rgb(53, 71, 49);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 7px 15px -3px rgba(170, 167, 167, 0.75);
+}
+.titleCategorysProduct h1{
+    font-size: 3em;
+    font-weight: 800;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.titleCategorysProduct p{    
+    color: rgb(208, 203, 189);
+    font-size: 1.4em;
+    text-align: center;
+}

@@ -6,25 +6,27 @@ export const MainProtectBuy = () => {
             <section>
                 <ul className="orderCardInfo">
                     <li className="orderCardInfoLi">
-                        <img src="/public/lc.png" alt="" />
+                        <img src="/lc.png" alt="" />
                         <h5>
                             Enviamos tu compra
                         </h5>
                     </li>
                     <li className="orderCardInfoLi">
-                        <img src="/public/tc.png" alt="" />
+                        <img src="/tc.png" alt="" />
                         <h5>
                             Paga como quieras
                         </h5>
                     </li>
                     <li className="orderCardInfoLi">
-                        <img src="/public/pc.png" alt="" />
+                        <img src="/pc.png" alt="" />
                         <h5>
                             Compra con seguridad
                         </h5>
                     </li>
                 </ul>
-                <hr className='hrMain' />
+                <div class="text-success">
+                    <hr/>
+                </div>
             </section>
         </div>
     )

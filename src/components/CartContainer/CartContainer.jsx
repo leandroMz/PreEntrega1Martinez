@@ -47,7 +47,7 @@ export const CartContainer = ({ product }) => {
           <hr />
           {cartList.map(product => (
             <div className="contein-product-cart">
-              <img className="product-cart-img" src={product.image} alt="" />
+              <img className="product-cart-img" src={product.picture} alt="" />
               <div className="product-cart">
                 <div className="product-detail">
                   <h5>{product.name}</h5>

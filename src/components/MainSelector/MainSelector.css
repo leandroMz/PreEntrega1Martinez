@@ -3,7 +3,6 @@
   justify-content: space-between;
   height: 25rem;
   margin-top: 3rem;
-  /* margin-bottom: 12rem; */
 }
 
 .box {
@@ -21,35 +20,36 @@
   text-align: center;
   margin-top: auto;
 }
-.box:hover h2{
+
+.box:hover h2 {
   color: rgb(183, 181, 178);
   text-shadow: 1px 1px 0 rgb(108, 105, 105);
   transition: 2s;
 }
-h2{
+
+h2 {
   color: rgb(209, 205, 205);
   font-weight: bold;
-  font-size: 4rem;  
+  font-size: 4rem;
   text-shadow: 1px 1px 0 rgb(148, 134, 134);
 }
-.textTwo h2{
+
+.textTwo h2 {
   color: rgb(170, 168, 165);
   text-shadow: 1px 1px 0 rgb(87, 85, 85);
 }
+
 .box:hover .textOne h2 {
   color: rgb(255, 255, 255);
   transition: 2s;
-
 }
+
 .box:hover .textTwo h2 {
   color: rgb(147, 146, 143);
   transition: 2s;
-
 }
-.textThree h2{
+
+.textThree h2 {
   color: rgb(133, 131, 129);
   text-shadow: 1px 1px 0 rgb(60, 58, 58);
-
 }
-
-
