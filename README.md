@@ -1,4 +1,4 @@
-# 🔺Polartech-Eyerwhere -- Proyecto Final CoderHouse - React
+## 🔺Polartech-Eyerwhere -- Proyecto eComerce con React
 ***
 
 ##                                                  
