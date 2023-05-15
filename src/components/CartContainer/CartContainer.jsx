@@ -5,6 +5,7 @@ import { CgMathMinus, CgMathPlus } from 'react-icons/cg';
 import { FaTrashAlt } from "react-icons/fa"
 import Swal from 'sweetalert2';
 import "./CartContainer.css"
+import { ValidateMail, ValidateName } from "../FormValidate/ValidateFunctions";
 import { useState } from "react";
 
 export const CartContainer = ({ product }) => {
@@ -15,6 +16,8 @@ export const CartContainer = ({ product }) => {
   })
   const { cartList, vaciarCart, quitarProducto, totalQuantity, totalPrice } = useCartContext()
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const [errors, setErrors] = useState([]);
+
   const alertDeleteCart = () => {
     Swal.fire({
       title: '¿Está seguro de vaciar el carrito?',
@@ -62,43 +65,64 @@ export const CartContainer = ({ product }) => {
       [evt.target.name]: evt.target.value
     })
   }
-  const handlePay = () => {
-    Swal.fire({
-      title: `Confirmar pedido`,
-      html: `
+  const handlePay = (ev) => {
+    const nameErrors = ValidateName({ name: dataForm.name });
+    const emailErrors = ValidateMail({ email: dataForm.email });
+    let acc = (nameErrors.length + emailErrors.length);
+    const errors = [...nameErrors, ...emailErrors];
+    borrarErrores()
+
+    if (acc > 0) {
+      ev.preventDefault()
+      let ulErrores = document.querySelector("div.errores ul")
+      for (let i = 0; i < errors.length; i++) {
+        ulErrores.innerHTML += "<li>" + errors[i] + "</li>"
+      }
+    } else {
+      Swal.fire({
+        title: `Confirmar pedido`,
+        html: `
         <p>Email: ${dataForm.email}</p>
         <p>Direccion Envio: Resistencia, Chaco (Junin 568)</p>
         <p>Precio Total: ${totalPrice()}</p>
         <p>Desea confirmar su pedido y abonar?</p>
       `,
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonText: 'Confirmar',
-      cancelButtonText: 'Cancelar',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: 'API de MP',
-          text: 'Confirmar y Pagar',
-          icon: 'info',
-          confirmButtonText: 'OK'
-        }).then(() => {
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
           Swal.fire({
-            title: '¡Muchas Gracias!',
-            text: 'Pedido procesado',
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
+            title: 'API de MP',
+            text: 'Confirmar y Pagar',
+            icon: 'info',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            Swal.fire({
+              title: '¡Muchas Gracias!',
+              text: 'Pedido procesado',
+              icon: 'success',
+              confirmButtonText: 'Aceptar'
+            });
+            vaciarCart()
           });
-          vaciarCart()          
-        });
-      }
-    });
-  };
+        }
+      });
+    }
+  }
+
+
   const handleContinue = () => {
     setIsFormVisible(true);
   };
- 
+  let ele = document.getElementById('parent');
+  function borrarErrores() {
+    while (ele.lastChild) {
+      ele.lastChild.remove();
+    }
+  }
 
   return (
     <div className='orderItems cartContein'>
@@ -144,8 +168,8 @@ export const CartContainer = ({ product }) => {
           <div className="ConteinCartContinue">
             <Link to={'/'} className="btn-cartCero-Back">Agregar más Productos</Link>
             {!isFormVisible && (
-          <button onClick={handleContinue} className="btn-cartCero">Continuar Compra</button>
-        )}
+              <button onClick={handleContinue} className="btn-cartCero">Continuar Compra</button>
+            )}
           </div>
           <div className="contein-product-cart">
             {isFormVisible ? (
@@ -154,25 +178,27 @@ export const CartContainer = ({ product }) => {
                 <div>
                   <ul className="inputConfirBuy">
                     <li>
-                      <h5>Nombre</h5>
-                <input type="text" name="name" onChange={handleOnChange} value={dataForm.name} placeholder="Ingrese su Nombre" />
+                      <h5>Nombre <span style={{ color: 'red' }}>*</span></h5>
+
+                      <input type="text" name="name" onChange={handleOnChange} value={dataForm.name} placeholder="Ingrese su Nombre" />
                     </li>
                     <li>
                       <h5>Telefono</h5>
-                <input type="phone" name="phone" onChange={handleOnChange} value={dataForm.phone} placeholder="Ingrese su Tel" />
+                      <input type="phone" name="phone" onChange={handleOnChange} value={dataForm.phone} placeholder="Ingrese su Tel" />
                     </li>
                     <li>
-                      <h5>Email</h5>
-                <input type="text" name="email" onChange={handleOnChange} value={dataForm.email} placeholder="Ingrese su Email" />
+                      <h5>Email <span style={{ color: 'red' }}>*</span></h5>
+                      <input type="text" name="email" onChange={handleOnChange} value={dataForm.email} placeholder="Ingrese su Email" />
                     </li>
-                    
-                  </ul>
-                <ul>
-                  <li></li>
-                  <li></li>
-                  <li></li>
 
-                </ul>
+                  </ul>
+                  <div className="errores">
+                    <ul id="parent">
+                      {errors.map((error, index) => (
+                        <li key={index}>{error}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
                 <button onClick={handlePay}>Confirmar y Pagar</button>
               </form>
