@@ -11,7 +11,7 @@ h3 {
 .titleCategorysProduct{
     margin: 1rem 0 2rem;
     padding: 2rem;
-    background-color: rgb(53, 71, 49);
+    background-color: darkslategray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ h3 {
     color: rgb(255, 255, 255);
 }
 .titleCategorysProduct p{    
-    color: rgb(208, 203, 189);
+    color: goldenrod;
     font-size: 1.4em;
     text-align: center;
 }

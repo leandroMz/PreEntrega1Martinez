@@ -31,7 +31,7 @@ export const Shipping = () => {
       />
       {selectedProvince && (
         <div>
-          <p>Costo Envio a Cotr ${shippingPrice}</p>
+          <p>Envio a Corrientes, Capital: ${shippingPrice}</p>
         </div>
       )}
     </div>

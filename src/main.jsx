@@ -4,9 +4,7 @@ import App from './App'
 import './index.css'
 import { initFirebase } from './firebase/config'
 
-
 initFirebase()
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
