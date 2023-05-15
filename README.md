@@ -12,7 +12,7 @@
 6. [Contribuciones](#Contribuciones)
 ***
 
-### General
+## General
 
 En el Proyecto Final del curso de React, he aplicado los conocimientos adquiridos durante el curso para desarrollar un e-commerce interactivo. Este proyecto ha sido creado como parte de la evaluación final del curso de React de Coderhouse.
 
