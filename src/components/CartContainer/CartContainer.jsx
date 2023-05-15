@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../Context/CartContext"
-import "./CartContainer.css"
-import { FaTrashAlt } from "react-icons/fa"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { CgMathMinus, CgMathPlus } from 'react-icons/cg';
+import { FaTrashAlt } from "react-icons/fa"
 import Swal from 'sweetalert2';
+import "./CartContainer.css"
+import { useState } from "react";
 
 export const CartContainer = ({ product }) => {
+  const [dataForm, setDataForm] = useState({
+    name: '',
+    phone: '',
+    email: ''
+  })
   const { cartList, vaciarCart, quitarProducto, totalQuantity, totalPrice } = useCartContext()
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const alertDeleteCart = () => {
     Swal.fire({
       title: '¿Está seguro de vaciar el carrito?',
@@ -28,6 +36,70 @@ export const CartContainer = ({ product }) => {
       }
     });
   };
+  const generateOrder = (evt) => {
+    evt.preventDefault()
+    const order = {}
+    order.buyer = dataForm
+    order.items = cartList.map(({ name, id, price, quantity }) => ({ id, name, price, quantity }))
+    order.total = totalPrice()
+    console.log(order)
+    const dbFirestore = getFirestore()
+    const orderCollection = collection(dbFirestore, 'orders')
+    addDoc(orderCollection, order)
+      .then(resp => console.log(resp))
+
+
+    //borrado logico
+    // const queryDoc = doc (dbFirestore, 'productos','pid')
+    // updateDoc(queryDoc,{
+    //   isActive:false
+    // })
+    // .finally(() => console.log("producto act."))
+  }
+  const handleOnChange = (evt) => {
+    setDataForm({
+      ...dataForm,
+      [evt.target.name]: evt.target.value
+    })
+  }
+  const handlePay = () => {
+    Swal.fire({
+      title: `Confirmar pedido`,
+      html: `
+        <p>Email: ${dataForm.email}</p>
+        <p>Direccion Envio: Resistencia, Chaco (Junin 568)</p>
+        <p>Precio Total: ${totalPrice()}</p>
+        <p>Desea confirmar su pedido y abonar?</p>
+      `,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'API de MP',
+          text: 'Confirmar y Pagar',
+          icon: 'info',
+          confirmButtonText: 'OK'
+        }).then(() => {
+          Swal.fire({
+            title: '¡Muchas Gracias!',
+            text: 'Pedido procesado',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+          });
+          vaciarCart()          
+        });
+      }
+    });
+  };
+  const handleContinue = () => {
+    setIsFormVisible(true);
+  };
+ 
+
   return (
     <div className='orderItems cartContein'>
       <div className="OrderTitleCart">
@@ -71,7 +143,40 @@ export const CartContainer = ({ product }) => {
           </div>
           <div className="ConteinCartContinue">
             <Link to={'/'} className="btn-cartCero-Back">Agregar más Productos</Link>
-            <Link to={'/'} className="btn-cartCero">Continuar Compra</Link>
+            {!isFormVisible && (
+          <button onClick={handleContinue} className="btn-cartCero">Continuar Compra</button>
+        )}
+          </div>
+          <div className="contein-product-cart">
+            {isFormVisible ? (
+              <form className="formConfirmBuy" onSubmit={generateOrder}>
+                <h5>Completa el formulario para continuar</h5>
+                <div>
+                  <ul className="inputConfirBuy">
+                    <li>
+                      <h5>Nombre</h5>
+                <input type="text" name="name" onChange={handleOnChange} value={dataForm.name} placeholder="Ingrese su Nombre" />
+                    </li>
+                    <li>
+                      <h5>Telefono</h5>
+                <input type="phone" name="phone" onChange={handleOnChange} value={dataForm.phone} placeholder="Ingrese su Tel" />
+                    </li>
+                    <li>
+                      <h5>Email</h5>
+                <input type="text" name="email" onChange={handleOnChange} value={dataForm.email} placeholder="Ingrese su Email" />
+                    </li>
+                    
+                  </ul>
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+
+                </ul>
+                </div>
+                <button onClick={handlePay}>Confirmar y Pagar</button>
+              </form>
+            ) : null}
           </div>
         </div>
       }

@@ -1,45 +1,63 @@
-footer{
+footer {
     padding-top: .5rem;
-    margin: 12rem 0 0 0;
+    margin: 0rem 0 0 0;
     background-color: darkslategray;
 }
-.container{
+
+.container {
     display: flex;
     justify-content: space-around;
-    align-items:stretch
+    align-items: stretch
 }
-h4{
+
+h4 {
     text-align: center;
     color: darkgray;
     font-size: 2em;
     font-weight: bold;
 }
-iframe{
-    
+
+iframe {
+
     border-radius: 1.5rem;
     box-shadow: 4px 8px 10px rgb(11, 11, 11);
 }
-.social-links{
+
+.hrFoot {
+    color: goldenrod;
+}
+
+.titleRedesFoot {
+    font-size: 1.5em;
+    color: gray;
+    font-weight: 500;
+}
+
+.social-links {
     padding-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-.social-image{
-    font-size: 5rem;
+
+.social-image {
+    font-size: 3rem;
     color: goldenrod;
 }
-.social-image:hover{
+
+.social-image:hover {
     color: rgb(177, 135, 27);
 }
 
-.ubication-box{
+.ubication-box {
     padding-top: 2rem;
 }
-.contact{
+
+.contact {
     padding: 1rem;
 }
-.form-contact h4{
+
+.form-contact h4 {
     padding-bottom: 2rem;
 }
 
@@ -71,7 +89,8 @@ input {
     box-shadow: -2px 7px 15px -3px rgba(0, 0, 0, 0.75);
     margin-right: .5rem;
 }
-button{
+
+button {
     background-color: goldenrod;
     box-shadow: -2px 7px 15px -3px rgba(0, 0, 0, 0.75);
     padding: .4rem 1rem;
@@ -80,10 +99,12 @@ button{
     font-weight: bold;
     color: rgb(77, 80, 83);
 }
-button:hover{
+
+button:hover {
     background-color: rgb(175, 134, 30);
 }
-#parent{
+
+#parent {
     display: flex;
     padding: 1rem;
     color: aliceblue;
@@ -91,6 +112,7 @@ button:hover{
     align-items: center;
     justify-content: center;
 }
+
 .errores-push {
     font-family: var(--fontPrincipal);
     font-size: .9em;
@@ -107,5 +129,13 @@ button:hover{
 
 .pass {
     border: 2px solid green;
+}
 
+.orderFootFooter {
+    display: flex;
+    align-items: center;
+}
+
+.footerRedes {
+    padding-left: 2rem;
 }

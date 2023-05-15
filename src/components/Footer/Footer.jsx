@@ -91,19 +91,55 @@ export const Footer = () => {
               </div>
             </form>
           </div>
-          <div className="footerRedes">
-            <h4>Síguenos en redes sociales</h4>
-            <div className="social-links">
-              <a href="https://www.instagram.com/leomz2" target='_blank'>
-                <FaInstagram className='social-image' />
-              </a>
-              <a className='git' href="https://github.com/leandroMz" target='_blank'>
-                <FaGithub className='social-image' />
-              </a>
-              <a className='linked' href="https://www.linkedin.com/in/leandromz" target='_blank'>
-                <FaLinkedin className='social-image' />
-              </a>
+          <hr className='hrFoot'/>
+          <div className='orderFootFooter'>
+            <div>
+              <ul>
+                <div>
+                  <li>
+                    <a href="">Todos los Productos</a>
+                  </li>
+                  <li>
+                    <a href="">Accesorios</a>
+                  </li>
+                  <li>
+                    <a href="">Lentes de Sol</a>
+                  </li>
+                  <li>
+                    <a href="">Clasicos</a>
+                  </li>
+                </div>
+                <div>
+                  <li>
+                    <a href="">Diseño</a>
+                  </li>
+                  <li>
+                    <a href="">Recetas</a>
+                  </li>
+                  <li>
+                    <a href="">Luz Azul</a>
+                  </li>
+                  <li>
+                    <a href="">Preguntas Frecuentes</a>
+                  </li>
+                </div>
+              </ul>
             </div>
+            <div className="footerRedes">
+              <h4 className='titleRedesFoot'>Síguenos en redes sociales</h4>
+              <div className="social-links">
+                <a href="https://www.instagram.com/leomz2" target='_blank'>
+                  <FaInstagram className='social-image' />
+                </a>
+                <a className='git' href="https://github.com/leandroMz" target='_blank'>
+                  <FaGithub className='social-image' />
+                </a>
+                <a className='linked' href="https://www.linkedin.com/in/leandromz" target='_blank'>
+                  <FaLinkedin className='social-image' />
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
         <div className="footerUbication">

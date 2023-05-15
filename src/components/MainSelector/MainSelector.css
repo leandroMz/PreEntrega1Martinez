@@ -4,7 +4,9 @@
   height: 25rem;
   margin-top: 3rem;
 }
-
+.boxMainSelector{
+  margin: 0 0 12rem 0;
+}
 .box {
   padding: 0 .1rem;
   width: 33.33%;

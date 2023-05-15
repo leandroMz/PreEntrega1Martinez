@@ -149,4 +149,36 @@
     box-shadow:inset -2px 7px 15px -3px rgba(106, 99, 64, 0.75);
 
 }
-    
+.formConfirmBuy{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 8px rgb(191, 187, 187);
+    border-radius: 1rem;
+    background-color: darkslategray;
+
+}
+.inputConfirBuy input{
+    background-color: rgb(221, 218, 218);
+    color: rgb(94, 94, 94);
+    box-shadow: 2px 2px 5px rgb(55, 55, 55);
+    border-radius: .7rem;
+}
+.formConfirmBuy h5{
+    color: rgb(211, 172, 74);
+    font-weight: 900;
+    padding-top: 1rem;
+}
+.inputConfirBuy h5{
+    font-weight: 500;
+    color: rgb(147, 144, 144);
+}
+.formConfirmBuy button{
+    margin: 2rem 0;
+    background-color: goldenrod;
+    color: aliceblue;
+    box-shadow: 2px 2px 5px rgb(57, 56, 56);
+    border-radius: .7rem;
+}
+.formConfirmBuy button:hover{
+    background-color: rgb(187, 143, 30);
+}
