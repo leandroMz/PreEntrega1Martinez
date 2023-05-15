@@ -1,6 +1,5 @@
 # 🔺Polartech-Eyerwhere -- Proyecto Final CoderHouse - React
-##  Leandro Martinez
-
+***
 
 ##                                                  
 1. [General](#general)
@@ -11,6 +10,7 @@
 6. [Instalación](#Instalación)
 6. [Capturas de Pantalla](#Capturas-de-Pantalla)
 6. [Contribuciones](#Contribuciones)
+***
 
 ### General
 
@@ -21,7 +21,6 @@ En el Proyecto Final del curso de React, he aplicado los conocimientos adquirido
 El proyecto consiste en un sitio web de e-commerce donde los usuarios pueden explorar y comprar productos. He utilizado React para construir la interfaz de usuario y Firebase para almacenar los datos de los productos y gestionar las órdenes de compra.
 
 En la página de inicio, los usuarios pueden ver una lista de todos los productos disponibles y filtrarlos por categoría. Al hacer clic en un producto, se muestra una página de detalles donde se puede ver información más detallada y agregar el producto al carrito de compras. El carrito de compras muestra los productos seleccionados, permite ajustar las cantidades y proceder al proceso de pago.
-
 
 
 ## Características Principales
@@ -48,6 +47,7 @@ En la página de inicio, los usuarios pueden ver una lista de todos los producto
 
 Puedes acceder a una demo en vivo del proyecto en [ecomerce-coder.netifly.app](https://ecomerce-coder.netifly.app).
 
+***
 
 ## Instalación
 
@@ -57,11 +57,14 @@ Puedes acceder a una demo en vivo del proyecto en [ecomerce-coder.netifly.app](h
 4. Ejecuta la aplicación con el comando `npm run dev`.
 5. Accede a la aplicación en tu navegador utilizando la URL [http://localhost:3000](http://localhost:3000).
 
+***
 
 ## Capturas de Pantalla
 
 ![Captura de Pantalla 1](screenshot1.png)
 ![Captura de Pantalla 2](screenshot2.png)
+
+***
 
 ## Contribuciones
 
@@ -70,6 +73,7 @@ Las contribuciones son bienvenidas. Si tienes alguna sugerencia, mejora o correc
 ## Autor
 
 Este proyecto fue desarrollado por [Leandro Martinez](https://github.com/LeandroMz).
+
 
 
 
