@@ -45,7 +45,7 @@ En la página de inicio, los usuarios pueden ver una lista de todos los producto
 
 ## Demo en Vivo
 
-Puedes acceder a una demo en vivo del proyecto en [ecomerce-coder.netifly.app](https://ecomerce-coder.netifly.app).
+Puedes acceder a una demo en vivo del proyecto en [ecomerce-coder.netifly.app](https://ecomerce-coder.netlify.app).
 
 ***
 
