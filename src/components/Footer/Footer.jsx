@@ -44,7 +44,7 @@ export const Footer = () => {
   }
   return (
     <footer>
-      <div className="container">
+      <div className="container containerFoot">
         <div className="contact">
           <div className="form-contact">
             <h4>Trabaja con Nosotros</h4>
@@ -93,7 +93,7 @@ export const Footer = () => {
           </div>
           <hr className='hrFoot'/>
           <div className='orderFootFooter'>
-            <div>
+            <div className='linksOrderFoot'>
               <ul>
                 <div>
                   <li>
@@ -158,7 +158,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center py-3">
+      <div className="text-center footerTextP">
         <p>&copy; Leandro Martinez - Desafio de Proyecto Final de React - CoderHouse 2023</p>
       </div>
     </footer>

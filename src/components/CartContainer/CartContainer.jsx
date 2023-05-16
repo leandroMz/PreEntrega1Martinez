@@ -50,14 +50,6 @@ export const CartContainer = ({ product }) => {
     const orderCollection = collection(dbFirestore, 'orders')
     addDoc(orderCollection, order)
       .then(resp => console.log(resp))
-
-
-    //borrado logico
-    // const queryDoc = doc (dbFirestore, 'productos','pid')
-    // updateDoc(queryDoc,{
-    //   isActive:false
-    // })
-    // .finally(() => console.log("producto act."))
   }
   const handleOnChange = (evt) => {
     setDataForm({
@@ -112,8 +104,6 @@ export const CartContainer = ({ product }) => {
       });
     }
   }
-
-
   const handleContinue = () => {
     setIsFormVisible(true);
   };

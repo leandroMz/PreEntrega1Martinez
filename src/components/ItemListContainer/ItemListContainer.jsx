@@ -28,8 +28,6 @@ export const ItemListContainer = ({ greeting }) => {
         .finally(() => setLoading(false))
     }
   }, [cid])
-
-
   const categoriesInfo = {
     Clasico: {
       title: 'Anteojos Clásicos',

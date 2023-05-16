@@ -18,8 +18,6 @@ function App() {
           <Route path="/category/:cid" element={<ItemListContainer greeting={"Bienvenidos"} />} />
           <Route path="/detail/:pid" element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<CartContainer />} />
-          {/* <Route path="/notfound" element={<NotFound />} /> */}
-          {/* <Route path="*" element={< Navigate to='/notfound'/>} /> */}
           <Route path="*" element={< Navigate to='/' />} />
         </Routes>
         <Footer/>

@@ -114,21 +114,15 @@ button:hover {
 }
 
 .errores-push {
-    font-family: var(--fontPrincipal);
     font-size: .9em;
-    background-color: var(--TitulosDark);
-    color: var(--TitulosLight);
+    background-color: rgb(39, 45, 39);
     border-radius: 1rem;
     padding: .2rem 1rem;
-    border: 2px solid;
+    border: 2px solid red;
 }
 
 .danger {
     border: 2px solid red;
-}
-
-.pass {
-    border: 2px solid green;
 }
 
 .orderFootFooter {
@@ -138,4 +132,56 @@ button:hover {
 
 .footerRedes {
     padding-left: 2rem;
+}
+
+@media (max-width: 800px) {
+    .footerUbication, .linksOrderFoot, .footerTextP{
+        display: none;
+    }
+footer{
+    padding: 1px 1rem 3rem;
+}
+.form-start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    margin-bottom: .5rem ;
+}
+#parent{
+    display: flex;
+    flex-direction: column;
+}
+.errores-push {
+    font-size: .8em;
+    border-radius: 1rem;
+    padding: .2rem 1rem;
+    border: 2px solid red;
+}
+
+.containerFoot{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.form-contact h4{
+    font-size: 1.4em;
+    /* position: relative; */
+    /* top: 1rem; */
+}
+.orderFootFooter{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.footerRedes{
+    padding: 0;
+}
+}
+
+
+
+
+@media (min-width: 801px) and (max-width: 900px) {
+}
+@media (min-width: 800px) {
 }
