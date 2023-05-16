@@ -69,6 +69,8 @@ Puedes acceder a una demo en vivo del proyecto en [ecomerce-coder.netifly.app](h
 ![Detalle](/public/screenShot/detail.png)
 ## CARRITO
 ![Carrito](/public/screenShot/cart.png)
+## FORMULARIO PARA ORDEN Y VALIDACION
+![Compra](/public/screenShot/validacion.PNG)
 ## CONFIRMACION DE COMPRA
 ![Compra](/public/screenShot/confirmBuy.png)
 ## ORDEN GENERADA EN FIREBASE
