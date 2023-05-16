@@ -61,8 +61,12 @@ Puedes acceder a una demo en vivo del proyecto en [ecomerce-coder.netifly.app](h
 
 ## Capturas de Pantalla
 
-![Captura de Pantalla 1](screenshot1.png)
-![Captura de Pantalla 2](screenshot2.png)
+![Home](/public/screenShot/home.png)
+![Categoria](/public/screenShot/Category.png)
+![Detalle](/public/screenShot/detail.png)
+![Carrito](/public/screenShot/cart.png)
+![Compra](/public/screenShot/confirmBuy.png)
+![Orden Generada en Firebase](/public/screenShot/ordenFirebase.PNG)
 
 ***
 
