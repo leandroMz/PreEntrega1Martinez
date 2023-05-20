@@ -6,6 +6,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer"
 import { CartContainer } from "./components/CartContainer/CartContainer"
 import { Footer } from "./components/Footer/Footer"
+import User from "./components/User/User"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/category/:cid" element={<ItemListContainer greeting={"Bienvenidos"} />} />
           <Route path="/detail/:pid" element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<CartContainer />} />
+          <Route path='/user' element={<User />} />
           <Route path="*" element={< Navigate to='/' />} />
         </Routes>
         <Footer/>

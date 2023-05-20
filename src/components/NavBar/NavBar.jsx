@@ -1,7 +1,7 @@
-import { FaUser } from 'react-icons/fa';
 import { Link, NavLink} from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { CartWidget } from '../CartWidget/CartWidget';
+import UserWidget from '../UserWidget/UserWidget';
 import './NavBar.css'
 
 export const NavBar = () => {
@@ -46,7 +46,7 @@ export const NavBar = () => {
                 <ul>
                     <li>
                         <a href="#">
-                            <FaUser />
+                            <UserWidget />
                         </a>
                     </li>
                     <li>
