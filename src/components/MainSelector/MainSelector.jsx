@@ -4,7 +4,7 @@ export const MainSelector = () => {
     return (
         <>
             <div className='boxMainSelector'>
-                <div class="text-success">
+                <div className="text-success">
                     <hr />
                 </div>
                 <div className="container">

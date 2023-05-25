@@ -49,7 +49,7 @@ export const ItemDetail = ({ product }) => {
               <h2>{product.name}</h2>
               <h3>{product.category}</h3>
               <h4>${product.price}</h4>
-              <h7>6 cuotas sin interés</h7>
+              <h6>6 cuotas sin interés</h6>
               <h5>({product.stock} disponibles) </h5>
               <div className=''>
                 {

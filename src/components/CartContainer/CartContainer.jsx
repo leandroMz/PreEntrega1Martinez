@@ -14,7 +14,7 @@ export const CartContainer = ({ product }) => {
     phone: '',
     email: ''
   })
-  const { cartList, vaciarCart, quitarProducto, totalQuantity, totalPrice } = useCartContext()
+  const { cartList, vaciarCart, quitarProducto, totalQuantity, totalPrice } = useCartContext();
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [errors, setErrors] = useState([]);
 
@@ -39,6 +39,7 @@ export const CartContainer = ({ product }) => {
       }
     });
   };
+  let orderId = ""
   const generateOrder = (evt) => {
     evt.preventDefault()
     const order = {}
@@ -49,8 +50,10 @@ export const CartContainer = ({ product }) => {
     const dbFirestore = getFirestore()
     const orderCollection = collection(dbFirestore, 'orders')
     addDoc(orderCollection, order)
-      .then(resp => console.log(resp))
-  }
+      .then((resp) => {
+        orderId = resp.id;
+      })
+    }
   const handleOnChange = (evt) => {
     setDataForm({
       ...dataForm,
@@ -63,22 +66,20 @@ export const CartContainer = ({ product }) => {
     let acc = (nameErrors.length + emailErrors.length);
     const errors = [...nameErrors, ...emailErrors];
     borrarErrores()
-
     if (acc > 0) {
-      ev.preventDefault()
-      let ulErrores = document.querySelector("div.errores ul")
-      for (let i = 0; i < errors.length; i++) {
-        ulErrores.innerHTML += "<li>" + errors[i] + "</li>"
-      }
+      ev.preventDefault();
+      setErrors(errors);
     } else {
-      Swal.fire({
-        title: `Confirmar pedido`,
-        html: `
+      const confirmHtml = `
         <p>Email: ${dataForm.email}</p>
         <p>Direccion Envio: Resistencia, Chaco (Junin 568)</p>
         <p>Precio Total: ${totalPrice()}</p>
         <p>Desea confirmar su pedido y abonar?</p>
-      `,
+      `;
+
+      Swal.fire({
+        title: 'Confirmar pedido',
+        html: confirmHtml,
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: 'Confirmar',
@@ -91,19 +92,21 @@ export const CartContainer = ({ product }) => {
             text: 'Confirmar y Pagar',
             icon: 'info',
             confirmButtonText: 'OK'
-          }).then(() => {
+          }).then((resp) => {
             Swal.fire({
               title: '¡Muchas Gracias!',
-              text: 'Pedido procesado',
+              html: `Pedido procesado. ID de orden: ${orderId}`,
               icon: 'success',
               confirmButtonText: 'Aceptar'
             });
-            vaciarCart()
+            vaciarCart();
+          }).catch((error) => {
+            console.log('Error al agregar el documento:', error);
           });
         }
       });
     }
-  }
+  };
   const handleContinue = () => {
     setIsFormVisible(true);
   };
@@ -132,7 +135,7 @@ export const CartContainer = ({ product }) => {
         <div>
           <hr />
           {cartList.map(product => (
-            <div className="contein-product-cart">
+            <div key={product.id} className="contein-product-cart">
               <img className="product-cart-img" src={product.picture} alt="" />
               <div className="product-cart">
                 <div className="product-detail">
@@ -141,7 +144,7 @@ export const CartContainer = ({ product }) => {
                 </div>
                 <div className="countCart">
                   <button className="btnCountCart"><CgMathMinus /></button>
-                  <h7 className="productQuantity">{product.quantity} </h7>
+                  <h6 className="productQuantity">{product.quantity} </h6>
                   <button className="btnCountCart"><CgMathPlus /></button>
                 </div>
                 <h5 className="productPrice">${(parseInt(product.price) * parseInt(product.quantity))} </h5>

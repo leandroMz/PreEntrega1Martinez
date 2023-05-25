@@ -1,4 +1,4 @@
-import { Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
 import { CartWidget } from '../CartWidget/CartWidget';
 import UserWidget from '../UserWidget/UserWidget';
@@ -19,17 +19,17 @@ export const NavBar = () => {
                         <ul className="navbar-nav">
                             <li>
                                 <ul>
-                                <NavDropdown title="Anteojos" id="basic-nav-dropdown">
-                                    <li>
-                                    <NavLink to="/category/Clasico">Clasicos</NavLink>
-                                    </li>
-                                    <li>
-                                    <NavLink to="/category/Diseño">Diseño</NavLink>
-                                    </li>
-                                    <li>
-                                    <NavLink to="#">Luz Azul</NavLink>
-                                    </li>                                        
-                                </NavDropdown>
+                                    <NavDropdown title="Anteojos" id="basic-nav-dropdown">
+                                        <li>
+                                            <NavLink to="/category/Clasico">Clasicos</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/category/Diseño">Diseño</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="#">Luz Azul</NavLink>
+                                        </li>
+                                    </NavDropdown>
                                 </ul>
                             </li>
                             <li className="nav-item">
@@ -37,7 +37,7 @@ export const NavBar = () => {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Ofertas</a>
-                            </li>                            
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -45,14 +45,14 @@ export const NavBar = () => {
             <div>
                 <ul>
                     <li>
-                        <a href="#">
+                        <div>
                             <UserWidget />
-                        </a>
+                        </div>
                     </li>
                     <li>
-                        <a href="">
+                        <div>
                             <CartWidget />
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </div>

@@ -24,7 +24,7 @@ export const MainProtectBuy = () => {
                         </h5>
                     </li>
                 </ul>
-                <div class="text-success">
+                <div className="text-success">
                     <hr/>
                 </div>
             </section>
