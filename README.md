@@ -1,5 +1,7 @@
 ## 🔺Polartech-Eyerwhere -- Proyecto eComerce con React
 ***
+### IMPORTANTE
+> El count en el carrito por el momento no tiene funcionalidad, estoy trabajando en varias mejoras para implementar, asi como tambien una forma de calcular y sumar el costo de envio por provincias dentro de Argentina, tambien estoy mejorando el estilo del skeleton que muestra cuando todavia carga los productos, y por ultimo quiero que la compra solo se me autorice si el usuario esta registrado, el registro de usuario ya esta en funcionamiento.
 
 ##                                                  
 1. [General](#general)
